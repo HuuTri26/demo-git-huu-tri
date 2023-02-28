@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>f8shop</title>
+<head>
+    <title>My first website</title>
+    <link rel="stylesheet" href="main.js">
+    <link rel="stylesheet" href="main.css">
+   
+    <style>
+        button{
+            color:blue;
+            font-size: 30px;
+            line-break: auto;
+        }
+    </style>
+    <style>
+        .hcjd{
+            width: 50%;
+            height: 70px;
+            background-color: deeppink;
+        }
+    </style>
+     
+</head>
+<body>
+    <script>
+    alert('hi javascrift')
+var fullName;
+fullName=prompt("họ và tên");
+alert("xin chao "+fullName);
+var message ='Học về built-in functions trong JS';
+var warnMessage ='Đây là message cảnh báo';
+var errorMessage ='Đây là message lỗi';
+console.log(message);
+setTimeout(function(){
+    console.warn (warnMessage);
+},1000);
+console.error(errorMessage);
+prompt('nhap so tuoi cua ban!');
+confirm('ban da du tuoi?');
+var total;
+var courses =[
+     {
+        id:1,
+        name: "Javascript",
+        coin:300,
+     },
+     {
+        id:2,
+        name: "Javascript",
+        coin:300,
+     },
+     {
+        id:3,
+        name: "Javascript",
+        coin:300,
+     },
+     {
+        id:4,
+        name: "Ruby",
+        coin:300,
+     },
+     {
+        id:5,
+        name: "Javascript",
+        coin:300,
+     },
+];
+var course= courses.find(function(course,index){
+   return course.name==='Ruby';
+})
+console.log(course);
+var course= courses.filter(function(course,index){
+   return course.name==='Javascript';
+})
+console.log(course);
+courses.forEach(function(cours,index){
+       console.log(index,cours);
+});
+
+
+var totalCoin= courses.reduce(function (total,course){
+    return total + course.coin;
+},0 );
+console.log(totalCoin);
+
+var numbers =[1,2,3,4,5];
+const result=numbers.reduce((total,number) => {
+      return total + number;
+},10);
+console.log(result);
+
+function User(firstName,lastName,Avatar){
+   this.firstName=firstName;
+   this.lastName=lastName;
+   this.Avatar=Avatar;
+   this.getName = function() {
+      return `${this.firstName} ${this.lastName}`;
+   }
+}
+
+var user=new User('Vu','Nguyen','Avatar');
+var author= new User('Ti','Bui','Avatar');
+
+author.title='Chia se dao tren F8';
+user.comment='Hay lắm ạ!';
+
+console.log(user.getName());
+console.log(author.getName());
+console.log(user);
+
+var date= new Date();
+let year= date.getFullYear();//Năm
+let month=date.getMonth()+1;//tháng
+let day=date.getDate();//Ngày
+console.log(`${day}/${month}/${year}`);
+
+var course={
+   name: 'Javascript',
+   coin:250,
+   soluong:4,
+}
+// if(course.coin>0){
+//    console.log(`${course.coin} coins`)
+// }
+var res= course.coin>0 ? `${course.coin} coin`:"Mien phi";
+console.log(res);
+
+for(var key in course){
+   console.log(`Thuộc tin ${key} : ${course[key]} `);
+}
+for(var value of Object.keys(course)){
+   console.log(course[value]);
+}
+
+for(var value of Object.values(course)){
+   console.log(value);
+}
+var i=0;
+var myArr=[
+      'js',
+      'html and css',
+      'dart',
+]
+while(i<myArr.length){
+   console.log(myArr[i]);
+   i++;
+}
+var newCourse=courses.map(function(course,index,originAray){
+      return {
+         id:course.id,
+         name:`Gias: ${course.name}`,
+         coin:course.coin,
+         coinText:`Gia: ${course.coin}`,
+         index:index,
+         originArray:course,
+      };
+})
+console.log(newCourse);
+var i=0;
+function coinHandle(accumulater,currentValue,curentIndex,originArray){
+      i++;
+      var total=accumulater+ currentValue.coin;
+      console.table({
+         'lượt chạy':i,
+         'Biến tích trữ':accumulater,
+         'Gia khoa hoc':currentValue.coin,
+         'Tich tru được ':total,
+      });
+      console.log(currentValue);
+      return accumulater+ currentValue.coin;
+
+}
+var totalCoin=courses.reduce(coinHandle,0);
+
+console.log(totalCoin);
+
+Array.prototype.reduce2=function(callback,result){
+   let i=0;
+   if(arguments.length<2){
+      i=1;
+      result=this[0];
+   }
+   for(;i<this.length;i++){
+      result=callback(result,this[i],i,this);
+   }
+   return result;
+}
+const numbers1=[1,2,3,4,5];
+ const result1 =numbers1.reduce2((total,number,index,array) =>{
+    console.log(total,number,index,array);
+   return total+number;
+},10);
+console.log( result1);
+</script>
+    <img id="im" src="https://img.youtube.com/vi/R6plN3FvzFY/sddefault.jpg" title="day la phu de"/>
+    <ul>
+        <ol>
+        <li>HTML, CSS từ zero đến Hero</li>
+        <li>Thiết kế web responsive</li>
+        <li>Lập trình Javascript cơ bản</li>
+        <li>Lập trình Javascript nâng cao</li>
+        <li>Nhiều khóa học khác từ Front-end, tới Back-end, Mobile, Devops</li>
+    </ol>
+    </ul>
+    <table>
+        <thead>
+            <th>#</th>
+            <th>Tên khóa học</th>
+            <th>Giá</th>
+            <th></th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>HTML, CSS từ zero đến Hero</td>
+                <td>Miễn phí</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Thiết kế web responsive</td>
+                <td>Miễn phí</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Lập trình Javascript cơ bản</td>
+                <td>Miễn phí</td>
+            </tr>
+            <tr>
+                <td class="uy">4</td>
+                <td>nap lan dau diii</td>
+                <button class="uy">Đăng kí nap lần đầu</button>
+                <td>16.500đ/lần</td>
+
+            </tr>
+        </tbody>
+    </table>
+
+    <div>
+        <button>Tên đăng nhập</button>
+        <input type="text">
+
+        <button>Mật khẩu</button>
+        <input type="password">
+    </div>
+    <div>
+        <input name="gender" type="checkbox">
+        <button>Nam</button>
+        <input name="gender" type="radio">
+        <button>Nữ</button>
+        <input name="gender" type="radio">
+        <button>Khác</button>
+    </div>
+    <div>
+        <input name="answer" type="radio">
+        <button id="ij">Đáp án 1</button>
+        <input name="answer" type="radio">
+        <button class="u">Đáp án 2</button>
+        <input name="answer" type="radio">
+        <button class="u">Đáp án 3</button>
+        <input name="answer" type="radio">
+        <button class="u">Đáp án 4</button>
+    </div>
+    <div>
+        <input type="submit" value="Đăng ký">
+    </div>
+    <a title="đây là phụ đề nè">wibu muôn năm</a>
+   <button id="fg" >Đăng kí khóa học</button>
+   <div>
+    <p class="paragraph p1">Đại diện lãnh đạo tỉnh Đắk Nông cho rằng</p>
+    <p class="paragraph p2">Đại diện lãnh đạo tỉnh Đắk Nông cho rằng</p>
+    <p class="paragraph p3">Đại diện lãnh đạo tỉnh Đắk Nông cho rằng</p>
+</div>
+<div>
+    <div class="container">
+        <div>
+            <div class="box">A box</div>
+        </div>
+    </div>
+</div>
+<div>
+    <h1 id="uh" class="ki" style="color: blue;" >tao kí ngực fan 2k3 2 em tây</h1>
+</div>
+<div>
+    <h1 class="hcjd" style="background-color: aqua;">   subachai</h1>
+</div>
+<div>
+    <p id="uj" >kakashi</p>
+</div>
+<div>
+
+<img title="hưudh"; src="https://i3.ytimg.com/vi/aXwRFbXInyE/maxresdefault.jpg" alt="A image" width="100%" />
+<a href="https://webcoban.vn/html/cach-tao-mot-cai-lien-ket-link-trong-html.html">Trang web fullstack.edu.vn</a>
+</div>
+<div id="app">
+    <h1 id="heading">HTML, CSS từ Zero đến Hero</h1>
+    <p class="desc">Trong khóa này tại <a href="https://fullstack.edu.vn/">F8</a>, chúng ta sẽ cùng nhau xây dựng giao diện 2 trang web là The Band & Shopee.</p>
+
+    <h2 class="sub-heading">Bạn sẽ< br /> học được gì?</h2>
+    <ul class="list">
+        <li class="list-item">Biết cách xây dựng giao diện web với <strong>HTML, CSS</strong></li>
+        <li class="list-item">Biết cách phân tích giao diện website</li>
+        <li class="list-item">Sở hữu <em>2 giao diện web</em> khi học xong khóa học</li>
+    </ul>
+    <p class="copyright">F8 - Nền <a href="https://fullstack.edu.vn/">tảng học lập trình web</a> đầu tiên tại Việt Nam</p>
+    <div id="box"></div>
+</div>
+var course =[
+  
+]
+</body>
